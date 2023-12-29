@@ -1,4 +1,5 @@
 import React from 'react';
+import Background from '../containers/Background';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -7,8 +8,6 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Background } from '../themes/background';
-import { ThemeProvider } from '@mui/material/styles';
 import { fonts } from '../themes/fonts';
 import { colors } from '../themes/colors';
 
@@ -40,15 +39,16 @@ const Login = () => {
         name={name}
         autoComplete={name}
         InputProps={{
-            style: { color: 'white' }, // Set the text color
+            style: { color: 'white' }, 
         }}
         InputLabelProps={{
-            style: { color: 'lightgray' }, // Set the placeholder text color
+            style: { color: 'lightgray' }, 
         }}
         />
     ));
     
     const containerStyles = {
+        marginTop:250,
         backgroundColor: colors.midnight,
         border: "2px solid #3A3A3B",
         borderRadius:10,
@@ -64,7 +64,7 @@ const Login = () => {
     };
     
     return (
-        <ThemeProvider theme={Background}>
+        <Background>
             <Container component="main" maxWidth="xs" style={{ ...containerStyles }}>
             <CssBaseline />
             <Box
@@ -111,7 +111,7 @@ const Login = () => {
                 </Box>
             </Box>
             </Container>
-        </ThemeProvider>
+        </Background>
     );
 };
 
