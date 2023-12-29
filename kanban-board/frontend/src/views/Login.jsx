@@ -29,21 +29,21 @@ const Login = () => {
 
     const renderUserInput = userInput.map(({name, label, type, id}, index) => (
         <TextField
-        key={index}
-        margin="normal"
-        required
-        fullWidth
-        id={id}
-        label={label}
-        type={type}
-        name={name}
-        autoComplete={name}
-        InputProps={{
-            style: { color: 'white' }, 
-        }}
-        InputLabelProps={{
-            style: { color: 'lightgray' }, 
-        }}
+            key={index}
+            margin="normal"
+            required
+            fullWidth
+            id={id}
+            label={label}
+            type={type}
+            name={name}
+            autoComplete={name}
+            InputProps={{
+                style: { color: 'white' }, 
+            }}
+            InputLabelProps={{
+                style: { color: 'lightgray' }, 
+            }}
         />
     ));
     
@@ -66,50 +66,50 @@ const Login = () => {
     return (
         <Background>
             <Container component="main" maxWidth="xs" style={{ ...containerStyles }}>
-            <CssBaseline />
-            <Box
-                sx={{
-                mt: 10,
-                mb: 5,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                }}
-            >
-                <Typography 
-                    component="h1" 
-                    variant="h5" 
-                    style={{ 
-                        fontFamily: fonts.inter, 
-                        fontWeight:600, 
-                        color:"white" 
-                }}>
-                    Login
-                </Typography>
-                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-                    {renderUserInput}
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        sx={{ mt: 3, mb: 2 }}
-                    >
+                <CssBaseline />
+                <Box
+                    sx={{
+                    mt: 10,
+                    mb: 5,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    }}
+                >
+                    <Typography 
+                        component="h1" 
+                        variant="h5" 
+                        style={{ 
+                            fontFamily: fonts.inter, 
+                            fontWeight:600, 
+                            color:"white" 
+                    }}>
                         Login
-                    </Button>
-                    <Grid container>
-                        <Grid item xs={6}>
-                            <Link href="#" variant="body2">
-                                Forgot password?
-                            </Link>
+                    </Typography>
+                    <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                        {renderUserInput}
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            sx={{ mt: 3, mb: 2 }}
+                        >
+                            Login
+                        </Button>
+                        <Grid container>
+                            <Grid item xs={6}>
+                                <Link href="#" variant="body2">
+                                    Forgot password?
+                                </Link>
+                            </Grid>
+                            <Grid item xs={6}>
+                                <Link href="/signup" variant="body2">
+                                    Sign Up
+                                </Link>
+                            </Grid>
                         </Grid>
-                        <Grid item xs={6}>
-                            <Link href="/signup" variant="body2">
-                                Sign Up
-                            </Link>
-                        </Grid>
-                    </Grid>
+                    </Box>
                 </Box>
-            </Box>
             </Container>
         </Background>
     );
